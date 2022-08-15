@@ -19,7 +19,7 @@ The function should:
 function createMenuItem(name, price, category){
   return {name, price, category};
 }
-console.log('Task 1a:', createMenuItem('tacos', 8, 'Lunch'));
+// console.log('Task 1a:', createMenuItem('tacos', 8, 'Lunch'));
 
 
 
@@ -33,7 +33,10 @@ Test your createMenuItems function by doing the following:
   For example: createMenuItem("pizza",5,"lunch") would return this as the object: {name:"Pizza",price:5,category:"lunch"}
 */
 
-
+// createMenuItem('pizza', 5, 'Lunch');
+// createMenuItem('pudding', 3, 'dessert');
+// createMenuItem('burger', 6, 'dinner');
+// console.log('Task 1b:', createMenuItem('pizza', 5, 'Lunch'), createMenuItem('pudding', 3, 'dessert'), createMenuItem('burger', 6, 'dinner'));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 You're having a lunch special! 25% off for teachers and students, 10% off for everyone else. Add a method to the burger object below that automatically calculates price depending on the string received as a parameter. 
@@ -53,8 +56,15 @@ const burger = {
   price: 18, 
   category: "Lunch", 
   
+  discount: function(person){
+    if(person === 'teacher' || person === 'student'){
+      return this.price - (this.price * 0.25);
+    }else if(person === 'public'){
+        return this.price - (this.price * 0.10);
+    }
+  }
 }
-
+// console.log('Task 2:', burger.discount('teacher'));
 
 
 ///////////////Reviews (MVP)///////////////////
